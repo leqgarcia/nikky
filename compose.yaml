@@ -8,7 +8,7 @@ services:
     hostname: itdb
     restart: always
     volumes:
-      - db-vol:/var/lib/postgresql/data
+      - db-vol:/var/lib/postgresql
       # - /home/gen/code/nikky/pylib:/pg/pylib
     environment:
       - PYTHONPATH=/pg/pylib
