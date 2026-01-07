@@ -1,5 +1,8 @@
 services:
   nikkydb:
+    build: 
+      context: . 
+      dockerfile: Dockerfile
     container_name: nikkydb
     image: nikky:latest
     hostname: itdb
