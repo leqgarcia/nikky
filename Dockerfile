@@ -1,15 +1,17 @@
-FROM postgres:16
-
+FROM postgres:18
 
 
 ENV APP_VERSION=0.0.2
 
+RUN apt update -y && \
+    apt install -y \
+        python3 python3-pip \
+        postgresql-plpython3-18 \
+        postgresql-18-cron \
+        wget vim git iputils-ping htop screen
 
-RUN apt update -y
-RUN apt install python3 python3-pip postgresql-plpython3-16 wget vim git iputils-ping htop screen postgresql-16-cron -y 
 
-
-RUN pip3 install --upgrade --break-system-packages pip
+# RUN pip3 install --upgrade --break-system-packages pip
 
 
 COPY ./requirements.txt /code/requirements.txt
